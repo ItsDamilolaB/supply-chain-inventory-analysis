@@ -49,3 +49,24 @@ The original dataset will be preserved during the initial audit. Identified issu
 The project aims to demonstrate practical skills in data auditing, data documentation, SQL analysis, business intelligence, and communicating data-driven recommendations.
 
 *Note: Findings and recommendations will be added as the analysis progresses.*
+
+## Current Progress and Next Steps
+
+The project is currently in the preliminary data-auditing stage. The source files are being examined to understand their structure, column meanings, data types, completeness, and relationships before data cleaning and analysis begin.
+
+### Current Progress
+
+- Created the GitHub repository and project folder structure.
+- Identified the source workbook and seven CSV files.
+- Recorded the structure of the purchase-order workbook: 18,000 data rows and 13 columns.
+- Completed preliminary missing-value checks across all 13 columns in the purchase-order workbook.
+- Identified blank `received_at` values associated with `open` and `cancelled` purchase orders.
+- Identified preliminary data-type issues involving date fields and the `order_value` column.
+- Began documenting column meanings, assumptions, and questions requiring verification.
+
+### Next Steps
+
+- Complete the purchase-order workbook audit, including duplicate-ID and date-validity checks.
+- Audit the seven CSV files and examine their relationships.
+- Finalize the data dictionary and data-quality log.
+- Proceed to data cleaning and analysis after the audit findings have been reviewed.
