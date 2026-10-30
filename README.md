@@ -54,28 +54,33 @@ The project aims to demonstrate practical skills in data auditing, data document
 
 The project is currently in the data-auditing and documentation stage. The source files are being examined to understand their structure, column meanings, data types, completeness, and relationships before data cleaning and analysis begin.
 
-### Current Progress
+## Current Progress and Next Steps
 
-- Created the GitHub repository and project folder structure.
-- Identified the source workbook and seven CSV files.
-- Recorded the structure of the purchase-order workbook: 18,000 data rows and 13 columns.
-- Checked the purchase-order ID sequence and duplicate IDs.
-- Examined all three date columns for text storage, date interpretability, and chronological consistency.
-- Identified that the date fields and `order_value` are stored as text, although their values can be interpreted as dates or numbers.
-- Investigated blank `received_at` values and found that they occur with `open` and `cancelled` purchase orders.
-- Checked quantity relationships, negative quantities, and `line_count` values.
-- Documented the distribution of the four purchase-order statuses: `received`, `partial`, `open`, and `cancelled`.
-- Checked the consistency of supplier references between the purchase-order workbook and `suppliers.csv`.
-- Inspected `suppliers.csv`, which contains 250 data rows and five columns.
-- Checked supplier ID and supplier name uniqueness, numeric data types, observed value ranges, and country-code consistency.
-- Consulted the dataset's original data dictionary to confirm the meanings of `lead_time_days` and `reliability_score`.
-- Began documenting audit observations, column meanings, and questions requiring business-context verification.
+### Completed
+- Created the GitHub repository and established the project folder structure.
+- Reviewed the source files and examined the data dictionary to understand the dataset structure and relationships.
+- Completed preliminary data audits of the purchase-order workbook and the following CSV tables:
+  - `suppliers.csv`
+  - `warehouses.csv`
+  - `products.csv`
+  - `purchase_orders.csv`
+  - `purchase_order_lines.csv`
+- Checked record counts, column structures, missing values, duplicate identifiers, data types, value ranges, and relationships between tables.
+- Identified data-quality and documentation issues, including inconsistent date representations, undocumented currency and measurement units, and fields requiring further clarification.
+- Documented preliminary findings and proposed treatments in the data audit workbook.
+
+### In Progress
+- Auditing the remaining source tables:
+  - `inventory_movements.csv`
+  - `inventory_opening_balances.csv`
+- Completing the data dictionary and data-quality log.
+- Reviewing relationships and validating references across the dataset.
 
 ### Next Steps
-
-- Continue auditing the remaining CSV files, beginning with `warehouses.csv`.
-- Complete the data dictionary and data-quality log.
-- Validate relationships between the remaining tables where relevant.
-- Review and document data-quality findings and proposed treatments before modifying any source data.
-- Proceed to SQL analysis and Power BI dashboard development after data preparation.
-
+1. Complete the preliminary audit of all source files.
+2. Finalize the data dictionary and data-quality log.
+3. Begin data cleaning and validation.
+4. Load the cleaned data into MySQL for analysis.
+5. Perform exploratory and supply-chain performance analysis using SQL.
+6. Develop interactive dashboards in Power BI.
+7. Document findings, insights, and recommendations.
