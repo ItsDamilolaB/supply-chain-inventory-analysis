@@ -52,41 +52,32 @@ The project aims to demonstrate practical skills in data auditing, data document
 
 ## Current Progress and Next Steps
 
-The project has progressed through the initial data auditing and documentation stages. The source files have been examined to understand their structure, column meanings, data types, completeness, and relationships before data cleaning and analysis begin.
+The project has progressed through the preliminary data-auditing and documentation stage. All eight source files have been inspected, their structures and relationships examined, and key data-quality checks performed.
 
 ### Completed
 
 - Created the GitHub repository and established the project folder structure.
-- Reviewed the source files and examined the original data dictionary to understand the dataset structure and relationships.
-- Completed preliminary data audits of all eight source files:
-  - `inventory-supply-chain-v1.0.0-analysis.xlsx`
-  - `suppliers.csv`
-  - `warehouses.csv`
-  - `products.csv`
-  - `purchase_orders.csv`
-  - `purchase_order_lines.csv`
-  - `inventory_movements.csv`
-  - `inventory_opening_balances.csv`
+- Completed preliminary audits of all eight source files.
 - Checked record counts, column structures, missing values, duplicate identifiers, data types, value ranges, and relationships between tables.
-- Validated all 12,067 inventory transfer IDs, with all records passing the transfer validation checks.
-- Identified data-quality and documentation issues, including inconsistent date representations, numeric values stored as text, undocumented currency and measurement units, and fields requiring further clarification.
-- Created `data_audit.xlsx` to document audit checks, findings, potential impacts, and proposed treatments.
-- Created `data_dictionary.xlsx`, documenting all 54 columns, 11 table relationships, and 15 business terms.
-- Created `data_quality_log.xlsx`, documenting 19 identified data-quality issues, their potential impacts, proposed treatments, and current statuses.
+- Validated all 12,067 inventory transfer IDs, confirming that each transfer has two corresponding records with matching products, different warehouses, and a net quantity change of zero.
+- Validated the `line_count` values for all 18,000 purchase orders against the actual records in `purchase_order_lines.csv`. All counts matched.
+- Verified warehouse references across the purchase-order sources.
+- Identified data-quality issues and fields requiring further clarification, including undocumented currencies and measurement units.
+- Created and reviewed the following documentation workbooks:
+  - `data_audit.xlsx`
+  - `data_dictionary.xlsx`
+  - `data_quality_log.xlsx`
 
 ### In Progress
 
-- Completing two outstanding cross-file audit validations:
-  - Verifying `warehouse_id` references in the purchase-order workbook against `warehouses.csv`.
-  - Validating the workbook's `line_count` values against the actual purchase-order line records in `purchase_order_lines.csv`.
-- Reviewing the three documentation workbooks for consistency before publishing them to GitHub.
+- Preparing the completed documentation workbooks for publication in the GitHub repository.
+- Planning the data-cleaning and validation phase.
 
 ### Next Steps
 
-1. Complete the outstanding audit validations and finalize the documentation workbooks.
-2. Upload the completed documentation to the GitHub repository.
-3. Begin data cleaning and validation.
-4. Load the cleaned data into MySQL for analysis.
-5. Perform exploratory and supply-chain performance analysis using SQL.
-6. Develop interactive dashboards in Power BI.
-7. Document findings, insights, and recommendations.
+1. Publish the documentation workbooks in the GitHub repository.
+2. Begin data cleaning and validation while preserving the original source data.
+3. Load the cleaned data into MySQL for analysis.
+4. Perform exploratory data analysis and supply-chain performance analysis using SQL.
+5. Develop interactive dashboards in Power BI.
+6. Document findings, insights, and recommendations.
