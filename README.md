@@ -52,33 +52,39 @@ The project aims to demonstrate practical skills in data auditing, data document
 
 ## Current Progress and Next Steps
 
-The project is currently in the data-auditing and documentation stage. The source files are being examined to understand their structure, column meanings, data types, completeness, and relationships before data cleaning and analysis begin.
-
-## Current Progress and Next Steps
+The project has progressed through the initial data auditing and documentation stages. The source files have been examined to understand their structure, column meanings, data types, completeness, and relationships before data cleaning and analysis begin.
 
 ### Completed
+
 - Created the GitHub repository and established the project folder structure.
-- Reviewed the source files and examined the data dictionary to understand the dataset structure and relationships.
-- Completed preliminary data audits of the purchase-order workbook and the following CSV tables:
+- Reviewed the source files and examined the original data dictionary to understand the dataset structure and relationships.
+- Completed preliminary data audits of all eight source files:
+  - `inventory-supply-chain-v1.0.0-analysis.xlsx`
   - `suppliers.csv`
   - `warehouses.csv`
   - `products.csv`
   - `purchase_orders.csv`
   - `purchase_order_lines.csv`
-- Checked record counts, column structures, missing values, duplicate identifiers, data types, value ranges, and relationships between tables.
-- Identified data-quality and documentation issues, including inconsistent date representations, undocumented currency and measurement units, and fields requiring further clarification.
-- Documented preliminary findings and proposed treatments in the data audit workbook.
-
-### In Progress
-- Auditing the remaining source tables:
   - `inventory_movements.csv`
   - `inventory_opening_balances.csv`
-- Completing the data dictionary and data-quality log.
-- Reviewing relationships and validating references across the dataset.
+- Checked record counts, column structures, missing values, duplicate identifiers, data types, value ranges, and relationships between tables.
+- Validated all 12,067 inventory transfer IDs, with all records passing the transfer validation checks.
+- Identified data-quality and documentation issues, including inconsistent date representations, numeric values stored as text, undocumented currency and measurement units, and fields requiring further clarification.
+- Created `data_audit.xlsx` to document audit checks, findings, potential impacts, and proposed treatments.
+- Created `data_dictionary.xlsx`, documenting all 54 columns, 11 table relationships, and 15 business terms.
+- Created `data_quality_log.xlsx`, documenting 19 identified data-quality issues, their potential impacts, proposed treatments, and current statuses.
+
+### In Progress
+
+- Completing two outstanding cross-file audit validations:
+  - Verifying `warehouse_id` references in the purchase-order workbook against `warehouses.csv`.
+  - Validating the workbook's `line_count` values against the actual purchase-order line records in `purchase_order_lines.csv`.
+- Reviewing the three documentation workbooks for consistency before publishing them to GitHub.
 
 ### Next Steps
-1. Complete the preliminary audit of all source files.
-2. Finalize the data dictionary and data-quality log.
+
+1. Complete the outstanding audit validations and finalize the documentation workbooks.
+2. Upload the completed documentation to the GitHub repository.
 3. Begin data cleaning and validation.
 4. Load the cleaned data into MySQL for analysis.
 5. Perform exploratory and supply-chain performance analysis using SQL.
